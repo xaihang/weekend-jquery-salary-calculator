@@ -15,7 +15,6 @@ TODO: FORM <form>;
         _ jobTitle
         _ annualSalary
 
-employee
 
 
     b. have button, type="submit" that:
