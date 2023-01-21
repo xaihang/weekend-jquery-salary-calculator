@@ -15,6 +15,9 @@ TODO: FORM <form>;
         _ jobTitle
         _ annualSalary
 
+employee
+
+
     b. have button, type="submit" that:
         - collect employee's inputs
         - store the employee's inputs to calculate monthly costs ( eg. val() )

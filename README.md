@@ -26,4 +26,6 @@ Add styling or extra functionality that fits with the theme of this assignment. 
 ![todo list app demo image](./salary-calc-wireframe.png)
 
 
-Additional notes can be found [here](https://github.com/xaihang/weekend-jquery-salary-calculator/blob/main/note.txt).
+My notes can be found [here](https://github.com/xaihang/weekend-jquery-salary-calculator/blob/main/note.txt).
+
+Instructions can be found [here](https://github.com/xaihang/weekend-jquery-salary-calculator/blob/main/INSTRUCTIONS.md).
