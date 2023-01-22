@@ -56,7 +56,8 @@ function onAddEmployee(event) {
         lastName: $('#lastNameInput').val(),
         idNumber: $('#idNumberInput').val(),
         title: $('#titleInput').val(),
-        annualSalary: $('#annualSalaryInput').val()
+        // annualSalary: $('#annualSalaryInput').val()
+        annualSalary: parseFloat($('#annualSalaryInput').val())
     }
   
 
