@@ -24,31 +24,52 @@ function onReady() {
     let totalMonthlySalary = onCalculateTotalMonthlySalary();
     $('#totalMonthlySalary').text('Monthly Total: ' + formatter.format(totalMonthlySalary));
     console.log('in onReady function:.....$', totalMonthlySalary);
+
 };
 
+// ORIGINAL CODE 
+// function render() {
+//     // empty() remove all the previous data and only show the current data
+//     $('#employee-table').empty();
+
+//  // update employee's inputs:   
+//     for (let employee of employees) {
+//         let annualSalaryFormatted = formatter.format(employee.annualSalary);
+//         $('#employee-table').append(`
+//         <tr>
+//             <td>${employee.firstName}</td>
+//             <td>${employee.lastName}</td>
+//             <td>${employee.idNumber}</td>
+//             <td>${employee.title}</td>
+//             <td>${annualSalaryFormatted}</td>
+//             <td>
+//                 <button class="deleteBtn">Delete</button>
+//             </td>
+//         </tr>
+//     `)
+//     console.log('in render for each employee...', employee);
+//     }
+
+// };
+
+// ⚡️ refactoring with .data() method:
 function render() {
-    // empty() remove all the previous data and only show the current data
     $('#employee-table').empty();
-
- // update employee's inputs:   
-    for (let employee of employees) {
+    for (let i = 0; i < employees.length; i++) {
+        let employee = employees[i];
         let annualSalaryFormatted = formatter.format(employee.annualSalary);
-        $('#employee-table').append(`
-        <tr>
-            <td>${employee.firstName}</td>
-            <td>${employee.lastName}</td>
-            <td>${employee.idNumber}</td>
-            <td>${employee.title}</td>
-            <td>${annualSalaryFormatted}</td>
-            <td>
-                <button class="deleteBtn">Delete</button>
-            </td>
-        </tr>
-    `)
-    console.log('in render for each employee...', employee);
-    }
-
-};
+        let row = $('<tr>')
+            .append(`<td>${employee.firstName}</td>`)
+            .append(`<td>${employee.lastName}</td>`)
+            .append(`<td>${employee.idNumber}</td>`)
+            .append(`<td>${employee.title}</td>`)
+            .append(`<td>${annualSalaryFormatted}</td>`)
+            .append(`<td><button class="deleteBtn">Delete</button></td>`)
+            .data('index', i);
+        $('#employee-table').append(row);
+        console.log('in render for each employee...', employee);
+    } 
+}
 
 // add employee's inputs to the database:
 function onAddEmployee(event) {
@@ -80,20 +101,34 @@ function onAddEmployee(event) {
     render(); 
 };
 
-// delete employee when delete btn is clicked
+
+// ORIGINAL code 
+// function onDeleteEmployee() {
+//     let currentTableRow= $(this).parent().parent();
+//     let indexOfEmployee = currentTableRow.index();
+//     employees.splice(indexOfEmployee, 1);
+
+//     let totalMonthlySalary = onCalculateTotalMonthlySalary(employees);
+//     updateTotalMonthlySalary(totalMonthlySalary);
+
+//     checkTotalSalary(totalMonthlySalary);
+
+//     console.log('employee after removal', indexOfEmployee);
+//     render(); 
+// };
+
+
+// ⚡️ refactoring onDeleteEmployee() to include .data() method:
 function onDeleteEmployee() {
-    let currentTableRow= $(this).parent().parent();
-    let indexOfEmployee = currentTableRow.index();
+    let currentTableRow = $(this).parent().parent();
+    let indexOfEmployee = currentTableRow.data('index');
     employees.splice(indexOfEmployee, 1);
 
     let totalMonthlySalary = onCalculateTotalMonthlySalary(employees);
     updateTotalMonthlySalary(totalMonthlySalary);
 
-    checkTotalSalary(totalMonthlySalary);
-
-    console.log('employee after removal', indexOfEmployee);
-    render(); 
-};
+    render();
+}
 
 
 // calculate employees monthly salary total:
