@@ -12,17 +12,18 @@ function onReady() {
     // handle removing employee from DOM
     $(document).on('click', '.deleteBtn', onDeleteEmployee);
 
+    $('#totalMonthlySalary').val(onCalculateTotalMonthlySalary());
+
+
 };
 
+// 
 function render() {
- 
-
-    // empty ()
+    // empty() remove all the previous data and only show the current data
     $('#employee-table').empty();
 
- // update the employee's inputs:   
+ // update employee's inputs:   
     for (let employee of employees) {
-        // console.log('for each employee...', employee.firstName);
         $('#employee-table').append(`
         <tr>
             <td>${employee.firstName}</td>
@@ -35,7 +36,10 @@ function render() {
             </td>
         </tr>
     `)
+    console.log('for each employee..', employee);
     }
+
+
 
 };
 
@@ -54,10 +58,27 @@ function onAddEmployee(event) {
     render(); 
 };
 
+// delete employee when delete btn is clicked
 function onDeleteEmployee() {
     let currentTableRow= $(this).parent().parent();
     let indexOfEmployee = currentTableRow.index();
     employees.splice(indexOfEmployee, 1);
-    // console.log('employee after removal', employees);
+
+    console.log('employee after removal', employees);
+
     render(); 
+};
+
+function onCalculateTotalMonthlySalary() {
+    render(); 
+
+    let totalAnnualSalary = 0;
+    for (let employee of employees) {
+        totalAnnualSalary += employee.annualSalary;
+
+        console.log('for each employee ANNUAL $$$..', employee);
+    }
+
+    let totalMonthlySalary = totalAnnualSalary / 12; 
+    return totalMonthlySalary; 
 };

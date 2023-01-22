@@ -4,8 +4,8 @@ TODO: SETUP/GITHUB STUFF;
 
 
 FINAL GOAL: 
-    1. records employee salaries
-    2. adds salaries up to report monthly costs 
+    1. records employees' information with ability to add / delete button and/or input
+    2. calculate monthly employees salary 
 
 TODO: FORM <form>;
     a. have an input to collect employee's:
@@ -15,23 +15,22 @@ TODO: FORM <form>;
         _ jobTitle
         _ annualSalary
 
-
-
     b. have button, type="submit" that:
         - collect employee's inputs
         - store the employee's inputs to calculate monthly costs ( eg. val() )
         - append information to the DOM ( eg. append() )
         - clear the input fields ( eg. empty() )
 
+    c. calculate monthly cost 
         - Using the stored information: calculate monthly costs 
         - and append 'this' (TotalMonthlyCost) to the to DOM.
              * IF the total monthly cost exceeds $20,000 == 'append' a red background color to the TotalMonthlyCost
 
-    c. add DELETE button; (For Base mode, it does **not** need to remove that Employee's salary from the reported total.)
+    d. add DELETE button; (For Base mode, it does **not** need to remove that Employee's salary from the reported total.)
         - removes an employee from the DOM
         - once employee is removed their annualSalary too should be REMOVE from the TotalMonthlyCost
 
-    d. STRETCH GOAL: Add styling or extra functionality that fits with the theme of this assignment.
+    e. STRETCH GOAL: Add styling or extra functionality that fits with the theme of this assignment.
         - DELETE button: 
             * update the _ TotalMonthlyCost _ section on the page to reflect the employee's removal.
                 (_HINT:_ You will need to figure out which employee was removed, in order to subtract their salary from the total. 
