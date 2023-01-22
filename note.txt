@@ -38,13 +38,6 @@ TODO: FORM <form>;
 
 
 
-
-why is dynamic 'employee-table' and 'deletebtn' not displaying on the DOM? 
-The issue is that the render() function is first emptying the #employee-table element, and then appending the new employee's data to it. Because of this, the new employee's data is not being displayed on the DOM.
-SOLUTION:
-You need to move the $('#employee-table').empty(); statement after the for loop, so that it clears the table only after all the new employee's data has been added.
-
-
 .data()
 -used to attach data to elements on a webpage. This data can then be accessed and manipulated later on. It is a way to store information on the element, so you can later access it.
 -You can use .data() to store any type of value, such as a string, number, object, or array. 

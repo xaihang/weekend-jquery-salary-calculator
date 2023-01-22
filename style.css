@@ -1,30 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 * {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body {
   background-color: #1B1725;
   color: #fff;
 }
-
-/* Remove Arrows/Spinners for ID and Annual Salary input:
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-/* 
-.total-monthly-salary {
-  background-color: lightgreen;
-} */
 
 .over-budget {
   background-color: red;
