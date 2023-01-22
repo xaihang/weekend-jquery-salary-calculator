@@ -10,3 +10,12 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+/* 
+.total-monthly-salary {
+  background-color: lightgreen;
+} */
+
+.over-budget {
+  background-color: red;
+}

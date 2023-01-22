@@ -19,10 +19,10 @@ Add styling or extra functionality that fits with the theme of this assignment. 
 
 
 -----------
-## DEPLOYED LINK: https://xaihang.github.io/weekend-jquery-salary-calculator/
+## Deployed link: [click here!](https://xaihang.github.io/weekend-jquery-salary-calculator/)
 
 
-### SCREENSHOT Image of application: 
+### Wireframe 
 ![todo list app demo image](./salary-calc-wireframe.png)
 
 

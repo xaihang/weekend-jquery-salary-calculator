@@ -5,6 +5,13 @@ let employees = [{firstName: 'Jen', lastName: 'Barber', idNumber: 4521, title: '
     {firstName: 'Maurice', lastName: 'Moss', idNumber: 8724, title: 'Support Team', annualSalary: 58000},
     {firstName: 'Roy', lastName: 'Smith', idNumber: 9623, title: 'Quality Assurance', annualSalary: 48000}];
 
+let formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+    useGrouping: true
+});
+
 function onReady() {
     render();
     // handle displaying the new employee's input on DOM
@@ -14,31 +21,25 @@ function onReady() {
     $(document).on('click', '.deleteBtn', onDeleteEmployee);
 
     //handle displaying monthly total cost for all employees
-    let formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-        useGrouping: true
-      });
-      let totalMonthlySalary = onCalculateTotalMonthlySalary();
-      $('#totalMonthlySalary').text('Monthly Total: ' + formatter.format(totalMonthlySalary));
-
+    let totalMonthlySalary = onCalculateTotalMonthlySalary();
+    $('#totalMonthlySalary').text('Monthly Total: ' + formatter.format(totalMonthlySalary));
+    console.log('in onReady function:.....$', totalMonthlySalary);
 };
 
-// 
 function render() {
     // empty() remove all the previous data and only show the current data
     $('#employee-table').empty();
 
  // update employee's inputs:   
     for (let employee of employees) {
+        let annualSalaryFormatted = formatter.format(employee.annualSalary);
         $('#employee-table').append(`
         <tr>
             <td>${employee.firstName}</td>
             <td>${employee.lastName}</td>
             <td>${employee.idNumber}</td>
             <td>${employee.title}</td>
-            <td>${employee.annualSalary}</td>
+            <td>${annualSalaryFormatted}</td>
             <td>
                 <button class="deleteBtn">Delete</button>
             </td>
@@ -46,6 +47,7 @@ function render() {
     `)
     console.log('in render for each employee...', employee);
     }
+
 };
 
 // add employee's inputs to the database:
@@ -57,13 +59,13 @@ function onAddEmployee(event) {
         lastName: $('#lastNameInput').val(),
         idNumber: $('#idNumberInput').val(),
         title: $('#titleInput').val(),
-        // annualSalary: $('#annualSalaryInput').val()
         annualSalary: parseFloat($('#annualSalaryInput').val())
     }
     employees.push(newEmployee);
 
     let totalMonthlySalary = onCalculateTotalMonthlySalary(employees);
     updateTotalMonthlySalary(totalMonthlySalary);
+    checkTotalSalary(totalMonthlySalary);
 
     console.log('onAddEmployee - new Employee:......', newEmployee);
     console.log('in onAddEmployee:', employees);
@@ -78,7 +80,6 @@ function onAddEmployee(event) {
     render(); 
 };
 
-
 // delete employee when delete btn is clicked
 function onDeleteEmployee() {
     let currentTableRow= $(this).parent().parent();
@@ -87,7 +88,9 @@ function onDeleteEmployee() {
 
     let totalMonthlySalary = onCalculateTotalMonthlySalary(employees);
     updateTotalMonthlySalary(totalMonthlySalary);
-    
+
+    checkTotalSalary(totalMonthlySalary);
+
     console.log('employee after removal', indexOfEmployee);
     render(); 
 };
@@ -108,10 +111,15 @@ function onCalculateTotalMonthlySalary() {
 };
 
 function updateTotalMonthlySalary(totalMonthlySalary) {
-    let formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-        useGrouping: true });
-    $('#totalMonthlySalary').text('Monthly Total: ' + formatter.format(totalMonthlySalary));
+    let totalSalaryFormatted = formatter.format(totalMonthlySalary);
+    $('#totalMonthlySalary').text('Monthly Total: ' + totalSalaryFormatted);
+    checkTotalSalary(totalMonthlySalary);
+};
+
+function checkTotalSalary(total) {
+    if(total >= 20000) {
+        $('.total-monthly-salary').addClass('over-budget');
+    } else {
+        $('.total-monthly-salary').removeClass('over-budget');
+    }
 };
