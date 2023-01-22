@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+* {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+body {
+  background-color: #F7AEF8;
+}
+
 /* Remove Arrows/Spinners for ID and Annual Salary input:
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -18,4 +27,66 @@ input[type=number] {
 
 .over-budget {
   background-color: red;
+}
+
+.form-submit-btn {
+	background: #8093F1;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+  width: 5em;  
+  height: 2em;
+}
+
+.form-submit-btn:hover {
+	background: #016ABC;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+}
+
+
+.deleteBtn {
+  background: #8093F1;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+  width: 5em;  
+  height: 2em;
+}
+
+.deleteBtn:hover {
+	background: #016ABC;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  width: 150px;
+  height: 40px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #F4F4ED;
+}
+table tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+th {
+  background-color: #72DDF7;
 }

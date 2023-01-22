@@ -1,6 +1,5 @@
 $(document).ready(onReady);
 
-// STATE
 let employees = [{firstName: 'Jen', lastName: 'Barber', idNumber: 4521, title: 'Team Lead', annualSalary: 80000},
     {firstName: 'Maurice', lastName: 'Moss', idNumber: 8724, title: 'Support Team', annualSalary: 58000},
     {firstName: 'Roy', lastName: 'Smith', idNumber: 9623, title: 'Quality Assurance', annualSalary: 48000}];
@@ -24,7 +23,6 @@ function onReady() {
     let totalMonthlySalary = onCalculateTotalMonthlySalary();
     $('#totalMonthlySalary').text('Monthly Total: ' + formatter.format(totalMonthlySalary));
     console.log('in onReady function:.....$', totalMonthlySalary);
-
 };
 
 // ORIGINAL CODE 
@@ -49,7 +47,6 @@ function onReady() {
 //     `)
 //     console.log('in render for each employee...', employee);
 //     }
-
 // };
 
 // ⚡️ refactoring with .data() method:
@@ -70,7 +67,7 @@ function render() {
         console.log('in render for each employee...', employee);
     } 
 }
-
+checkTotalSalary
 // add employee's inputs to the database:
 function onAddEmployee(event) {
     event.preventDefault(); 
