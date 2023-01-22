@@ -23,6 +23,10 @@ function onReady() {
     let totalMonthlySalary = onCalculateTotalMonthlySalary();
     $('#totalMonthlySalary').text('Monthly Total: ' + formatter.format(totalMonthlySalary));
     console.log('in onReady function:.....$', totalMonthlySalary);
+
+    //total monthly
+    $('.total-monthly-salary').css('font-size', '24px');
+    
 };
 
 // ORIGINAL CODE 

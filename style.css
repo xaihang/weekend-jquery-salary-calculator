@@ -4,7 +4,8 @@
 }
 
 body {
-  background-color: #F7AEF8;
+  background-color: #1B1725;
+  color: #fff;
 }
 
 /* Remove Arrows/Spinners for ID and Annual Salary input:
@@ -36,8 +37,12 @@ input[type=number] {
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #eee;
 	text-shadow: none;
-  width: 5em;  
-  height: 2em;
+  display: block;
+  clear: both;
+  margin-top:10px;
+  margin-left: 789px;
+  width: 8em;  
+  height: 3em;
 }
 
 .form-submit-btn:hover {
@@ -83,12 +88,19 @@ th, td {
 }
 
 table tr:nth-child(odd) {
-  background-color: #F4F4ED;
+  background-color: grey;
 }
 table tr:nth-child(even) {
-  background-color: lightgrey;
+  background-color: darkgray;
 }
 
 th {
-  background-color: #72DDF7;
+  background-color: #534B62;
 }
+
+h4 {
+text-align: center;
+font-weight: bold;
+font-size: large;
+}
+
