@@ -8,12 +8,19 @@ let employees = [{firstName: 'Jen', lastName: 'Barber', idNumber: 4521, title: '
 function onReady() {
     render();
     // handle displaying the new employee's input on DOM
-    $('#addEmployeeForm').on('submit', onAddEmployee)
+    $('#addEmployeeForm').on('submit', onAddEmployee);
+
     // handle removing employee from DOM
     $(document).on('click', '.deleteBtn', onDeleteEmployee);
 
-    $('#totalMonthlySalary').val(onCalculateTotalMonthlySalary());
-
+    //handle displaying monthly total cost for all employees
+    let formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+        useGrouping: true
+      });
+      $('#totalMonthlySalary').text('Monthly Total: ' + formatter.format(onCalculateTotalMonthlySalary()));
 
 };
 
@@ -38,9 +45,6 @@ function render() {
     `)
     console.log('for each employee..', employee);
     }
-
-
-
 };
 
 // add employee's inputs to the database:
@@ -55,6 +59,15 @@ function onAddEmployee(event) {
         annualSalary: $('#annualSalaryInput').val()
     }
     employees.push(newEmployee);
+    console.log('new Employee:......', newEmployee);
+
+    // empty out the input field for the next employee's input 
+    $('#firstNameInput').val('');
+    $('#lastNameInput').val('');
+    $('#idNumberInput').val('');
+    $('#titleInput').val('');
+    $('#annualSalaryInput').val('');
+
     render(); 
 };
 
@@ -64,21 +77,20 @@ function onDeleteEmployee() {
     let indexOfEmployee = currentTableRow.index();
     employees.splice(indexOfEmployee, 1);
 
-    console.log('employee after removal', employees);
-
+    console.log('employee after removal', indexOfEmployee);
     render(); 
 };
 
 function onCalculateTotalMonthlySalary() {
-    render(); 
 
     let totalAnnualSalary = 0;
     for (let employee of employees) {
         totalAnnualSalary += employee.annualSalary;
-
-        console.log('for each employee ANNUAL $$$..', employee);
     }
 
     let totalMonthlySalary = totalAnnualSalary / 12; 
+
+    console.log('totalMonthlySalary', totalMonthlySalary);
     return totalMonthlySalary; 
+  
 };
