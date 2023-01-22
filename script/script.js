@@ -43,7 +43,7 @@ function render() {
             </td>
         </tr>
     `)
-    console.log('for each employee..', employee);
+    console.log('in render for each employee...', employee);
     }
 };
 
@@ -58,8 +58,15 @@ function onAddEmployee(event) {
         title: $('#titleInput').val(),
         annualSalary: $('#annualSalaryInput').val()
     }
+  
+
+    let totalMonthlySalary = onCalculateTotalMonthlySalary(newEmployee);
+    updateTotalMonthlySalary(totalMonthlySalary);
+
     employees.push(newEmployee);
-    console.log('new Employee:......', newEmployee);
+
+    console.log('onAddEmployee - new Employee:......', newEmployee);
+    console.log('in onAddEmployee:', employees);
 
     // empty out the input field for the next employee's input 
     $('#firstNameInput').val('');
@@ -71,26 +78,40 @@ function onAddEmployee(event) {
     render(); 
 };
 
+
 // delete employee when delete btn is clicked
 function onDeleteEmployee() {
     let currentTableRow= $(this).parent().parent();
     let indexOfEmployee = currentTableRow.index();
     employees.splice(indexOfEmployee, 1);
 
+    let totalMonthlySalary = onCalculateTotalMonthlySalary(employees);
+    updateTotalMonthlySalary(totalMonthlySalary);
+    
     console.log('employee after removal', indexOfEmployee);
     render(); 
 };
 
-function onCalculateTotalMonthlySalary() {
 
+// calculate employees monthly salary total:
+function onCalculateTotalMonthlySalary(employee) {
     let totalAnnualSalary = 0;
     for (let employee of employees) {
-        totalAnnualSalary += employee.annualSalary;
+        totalAnnualSalary += Number(employee.annualSalary);
     }
 
-    let totalMonthlySalary = totalAnnualSalary / 12; 
+    let totalMonthlySalary = (totalAnnualSalary) / (12); 
 
-    console.log('totalMonthlySalary', totalMonthlySalary);
+    console.log('in onCalculateTotalMonthlySalary........', totalMonthlySalary);
+
     return totalMonthlySalary; 
-  
+};
+
+function updateTotalMonthlySalary(totalMonthlySalary) {
+    let formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+        useGrouping: true });
+    $('#totalMonthlySalary').text('Monthly Total: ' + formatter.format(totalMonthlySalary));
 };
