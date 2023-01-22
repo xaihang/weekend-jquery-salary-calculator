@@ -20,7 +20,8 @@ function onReady() {
         minimumFractionDigits: 2,
         useGrouping: true
       });
-      $('#totalMonthlySalary').text('Monthly Total: ' + formatter.format(onCalculateTotalMonthlySalary()));
+      let totalMonthlySalary = onCalculateTotalMonthlySalary();
+      $('#totalMonthlySalary').text('Monthly Total: ' + formatter.format(totalMonthlySalary));
 
 };
 
@@ -59,12 +60,10 @@ function onAddEmployee(event) {
         // annualSalary: $('#annualSalaryInput').val()
         annualSalary: parseFloat($('#annualSalaryInput').val())
     }
-  
-
-    let totalMonthlySalary = onCalculateTotalMonthlySalary(newEmployee);
-    updateTotalMonthlySalary(totalMonthlySalary);
-
     employees.push(newEmployee);
+
+    let totalMonthlySalary = onCalculateTotalMonthlySalary(employees);
+    updateTotalMonthlySalary(totalMonthlySalary);
 
     console.log('onAddEmployee - new Employee:......', newEmployee);
     console.log('in onAddEmployee:', employees);
@@ -95,7 +94,7 @@ function onDeleteEmployee() {
 
 
 // calculate employees monthly salary total:
-function onCalculateTotalMonthlySalary(employee) {
+function onCalculateTotalMonthlySalary() {
     let totalAnnualSalary = 0;
     for (let employee of employees) {
         totalAnnualSalary += Number(employee.annualSalary);
