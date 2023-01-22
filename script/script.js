@@ -22,7 +22,7 @@ function render() {
 
  // update the employee's inputs:   
     for (let employee of employees) {
-        console.log('for each employee...', employee.firstName);
+        // console.log('for each employee...', employee.firstName);
         $('#employee-table').append(`
         <tr>
             <td>${employee.firstName}</td>
@@ -47,8 +47,8 @@ function onAddEmployee(event) {
         firstName: $('#firstNameInput').val(), 
         lastName: $('#lastNameInput').val(),
         idNumber: $('#idNumberInput').val(),
-        jobTitleInput: $('#titleInput').val(),
-        annualSalaryInput: $('#annualSalaryInput').val()
+        title: $('#titleInput').val(),
+        annualSalary: $('#annualSalaryInput').val()
     }
     employees.push(newEmployee);
     render(); 
