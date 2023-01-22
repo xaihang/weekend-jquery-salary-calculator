@@ -23,7 +23,7 @@ Add styling or extra functionality that fits with the theme of this assignment. 
 
 
 ### Wireframe 
-![todo list app demo image](./salary-calc-wireframe.png)
+![todo list app demo image](./salary-calculator-demo.png)
 
 
 My notes can be found [here](https://github.com/xaihang/weekend-jquery-salary-calculator/blob/main/note.txt).
