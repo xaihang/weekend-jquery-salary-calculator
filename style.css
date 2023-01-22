@@ -41,8 +41,9 @@ input[type=number] {
 }
 
 .form-submit-btn:hover {
-	background: #016ABC;
-	color: #fff;
+	background: #77FF77;
+	color: black;
+  font-weight: bold;
 	border: 1px solid #eee;
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #eee;
@@ -62,8 +63,9 @@ input[type=number] {
 }
 
 .deleteBtn:hover {
-	background: #016ABC;
-	color: #fff;
+	background: #FF6E6E;
+	color: black;
+  font-weight: bold;
 	border: 1px solid #eee;
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #eee;

@@ -55,7 +55,7 @@ function render() {
     for (let i = 0; i < employees.length; i++) {
         let employee = employees[i];
         let annualSalaryFormatted = formatter.format(employee.annualSalary);
-        let row = $('<tr>')
+        let row = $('<tr style="text-align:center">')
             .append(`<td>${employee.firstName}</td>`)
             .append(`<td>${employee.lastName}</td>`)
             .append(`<td>${employee.idNumber}</td>`)
