@@ -18,7 +18,7 @@ function onReady() {
 
     // handle removing employee from DOM
     // $(document).on('click', '.deleteBtn', onDeleteEmployee);
-    // refactor to specific element 'tbody' - good practice for future bigger scale project 
+    // 👇 refactor to specific element 'tbody' - good practice for future bigger scale project 
     $('tbody').on('click', '.deleteBtn', onDeleteEmployee);
 
     //handle displaying monthly total cost for all employees
@@ -123,7 +123,7 @@ function onAddEmployee(event) {
 // ⚡️ refactoring onDeleteEmployee() to include .data() method:
 function onDeleteEmployee() {
     // let currentTableRow = $(this).parent().parent();
-    // 👇 refactor to this instead to avoid future bug 
+    //                              👇 refactor to this instead to avoid future bug 
     let currentTableRow = $(this).closest('tr').remove();
     let indexOfEmployee = currentTableRow.data('index');
     employees.splice(indexOfEmployee, 1);
