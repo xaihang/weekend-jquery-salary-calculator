@@ -6,7 +6,7 @@
 The application gathers employee's information such as their first name, last name, ID numbers, job titles, and annual salaries. When an employee is added to the database by clicking on the submit button, their information is displayed in a table formation on the browser. If an employee is removed, a "delete" button is available for each employee. Rather it is adding or removing an employee it will calculate employees annual salary and displayed beneath the table as "Monthly Total". If the "Monthly Total" exceeds $20,000.00, the background color of the total monthly cost will turn red. 
 
 
-## Tools and methods used in this application:
+## Tools 
 * HTML
 * CSS 
 * JavaScript
