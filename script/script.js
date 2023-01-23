@@ -1,9 +1,11 @@
 $(document).ready(onReady);
 
+//  Global State - List of employees
 let employees = [{firstName: 'Jen', lastName: 'Barber', idNumber: 4521, title: 'Team Lead', annualSalary: 80000},
     {firstName: 'Maurice', lastName: 'Moss', idNumber: 8724, title: 'Support Team', annualSalary: 58000},
     {firstName: 'Roy', lastName: 'Smith', idNumber: 9623, title: 'Quality Assurance', annualSalary: 48000}];
 
+//  Global State - format salary into USD currency
 let formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -13,20 +15,20 @@ let formatter = new Intl.NumberFormat('en-US', {
 
 function onReady() {
     render();
-    // handle displaying the new employee's input on DOM
+    // handle displaying the new employee's input 
     $('#addEmployeeForm').on('submit', onAddEmployee);
 
-    // handle removing employee from DOM
+    // handle removing employee 
     // $(document).on('click', '.deleteBtn', onDeleteEmployee);
     // 👇 refactor to specific element 'tbody' - good practice for future bigger scale project 
     $('tbody').on('click', '.deleteBtn', onDeleteEmployee);
 
-    //handle displaying monthly total cost for all employees
+    //handle displaying monthly total cost for all employees 
     let totalMonthlySalary = onCalculateTotalMonthlySalary();
     $('#totalMonthlySalary').text('Monthly Total: ' + formatter.format(totalMonthlySalary));
     console.log('in onReady function:.....$', totalMonthlySalary);
 
-    //total monthly salary font size display
+    //total monthly salary font size display 
     $('.total-monthly-salary').css('font-size', '24px');
 };
 
