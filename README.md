@@ -11,11 +11,14 @@ The application gathers information from employees, such as their names, ID numb
 * JavaScript
 * jQuery 
 
-*  *What* problem did you solve and *How* did you solve it?
+## Challenges
+* Converting the annual salary from number value to currency by using the 
 
 
-* *Optional:*
-Add styling or extra functionality that fits with the theme of this assignment. What was added? 
+## CSS styling
+* Button: hoover - when hoovered over the buttons it will change color. Additional shadow for backdrop. 
+* Background color for general overall, change font color
+* Table row, when adding employee to the row, every other one will change color 
 
 
 -----------

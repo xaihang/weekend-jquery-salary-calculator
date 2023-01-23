@@ -24,9 +24,8 @@ function onReady() {
     $('#totalMonthlySalary').text('Monthly Total: ' + formatter.format(totalMonthlySalary));
     console.log('in onReady function:.....$', totalMonthlySalary);
 
-    //total monthly
+    //total monthly salary font size display
     $('.total-monthly-salary').css('font-size', '24px');
-    
 };
 
 // ORIGINAL CODE 
@@ -70,8 +69,8 @@ function render() {
         $('#employee-table').append(row);
         console.log('in render for each employee...', employee);
     } 
-}
-checkTotalSalary
+};
+
 // add employee's inputs to the database:
 function onAddEmployee(event) {
     event.preventDefault(); 
@@ -129,8 +128,7 @@ function onDeleteEmployee() {
     updateTotalMonthlySalary(totalMonthlySalary);
 
     render();
-}
-
+};
 
 // calculate employees monthly salary total:
 function onCalculateTotalMonthlySalary() {

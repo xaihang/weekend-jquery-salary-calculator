@@ -35,13 +35,4 @@ TODO: FORM <form>;
             * update the _ TotalMonthlyCost _ section on the page to reflect the employee's removal.
                 (_HINT:_ You will need to figure out which employee was removed, in order to subtract their salary from the total. 
                          Consider using `.text()` as a getter, or look into jQuery's `.data()` function. This is tricky! )
-
-
-
-.data()
--used to attach data to elements on a webpage. This data can then be accessed and manipulated later on. It is a way to store information on the element, so you can later access it.
--You can use .data() to store any type of value, such as a string, number, object, or array. 
-**It can be tricky because if you use .data() to store data on an element, that data is only accessible within the context of your JavaScript code, and not directly in the HTML or CSS. Therefore, 
-it is important to make sure that you document what data you are storing on an element, and how you are using it, so that other developers can understand how the code is working. 
-Additionally, it's important to be careful when using .data() to store data on elements that might be deleted or replaced later on, as this can cause memory leaks if the data is not properly cleaned up.
-
+                         
