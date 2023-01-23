@@ -120,7 +120,9 @@ function onAddEmployee(event) {
 
 // ⚡️ refactoring onDeleteEmployee() to include .data() method:
 function onDeleteEmployee() {
-    let currentTableRow = $(this).parent().parent();
+    // let currentTableRow = $(this).parent().parent();
+    // refactor to this instead to avoid future bug 
+    let currentTableRow = $(this).closest('tr').remove();
     let indexOfEmployee = currentTableRow.data('index');
     employees.splice(indexOfEmployee, 1);
 
