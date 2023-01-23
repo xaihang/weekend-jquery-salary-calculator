@@ -14,6 +14,7 @@ The application gathers information from employees, such as their names, ID numb
 ## Challenges and solutions
 * Formatting the annual salary from number value to currency by using the Intl.NumberFormat() method
 * Refactoring the render() and onDeleteEmployee() to include .data() method - which is use to attach and store data on elements in a webpage, which can be accessed and manipulated later on.
+* To check if the monthly total salary is $20,000 or more and change the background color to 'red'. A function was created to handle this one task called 'checkTotalSalary' with if/else statements; depending on the valid situation it will add or remove the 'red' background - applied with the addClass() and removeClass() methods. Additional a  class selector 'over-budget' was dynamically added in the css stylesheet and bridge it into the JavaScript file to serve this purpose. 
 
 
 ## CSS styling
