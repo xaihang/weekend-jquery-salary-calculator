@@ -11,8 +11,9 @@ The application gathers information from employees, such as their names, ID numb
 * JavaScript
 * jQuery 
 
-## Challenges
-* Converting the annual salary from number value to currency by using the 
+## Challenges and solutions
+* Formatting the annual salary from number value to currency by using the Intl.NumberFormat() method
+* Refactoring the render() and onDeleteEmployee() to include .data() method - which is use to attach and store data on elements in a webpage, which can be accessed and manipulated later on.
 
 
 ## CSS styling
