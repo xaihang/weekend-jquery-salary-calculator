@@ -3,12 +3,12 @@
 }
 
 body {
-  background-color: #1B1725;
-  color: #fff;
+	background-color: #1B1725;
+	color: #fff;
 }
 
 .over-budget {
-  background-color: red;
+	background-color: red;
 }
 
 .form-submit-btn {
@@ -18,18 +18,18 @@ body {
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #eee;
 	text-shadow: none;
-  display: block;
-  clear: both;
-  margin-top:10px;
-  margin-left: 789px;
-  width: 8em;  
-  height: 3em;
+	display: block;
+	clear: both;
+	margin-top:10px;
+	margin-left: 789px;
+	width: 8em;  
+	height: 3em;
 }
 
 .form-submit-btn:hover {
 	background: #77FF77;
 	color: black;
-  font-weight: bold;
+  	font-weight: bold;
 	border: 1px solid #eee;
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #eee;
@@ -38,20 +38,20 @@ body {
 
 
 .deleteBtn {
-  background: #8093F1;
+  	background: #8093F1;
 	color: #fff;
 	border: 1px solid #eee;
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #eee;
 	text-shadow: none;
-  width: 5em;  
-  height: 2em;
+	width: 5em;  
+	height: 2em;
 }
 
 .deleteBtn:hover {
 	background: #FF6E6E;
 	color: black;
-  font-weight: bold;
+  	font-weight: bold;
 	border: 1px solid #eee;
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #eee;
@@ -75,13 +75,16 @@ table tr:nth-child(even) {
   background-color: darkgray;
 }
 
-th {
+th{
   background-color: #534B62;
 }
 
 h4 {
-text-align: center;
-font-weight: bold;
-font-size: large;
+	text-align: center;
+	font-weight: bold;
+	font-size: large;
 }
 
+#table-footer {
+    background-color:#534B62;
+}
